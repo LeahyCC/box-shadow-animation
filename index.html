@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>title</title>
+  <style type="text/css">
+    html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; } /* HTML5 display-role reset for older browsers */ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; } body { line-height: 1; } ol, ul { list-style: none; } blockquote, q { quotes: none; } blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; } table { border-collapse: collapse; border-spacing: 0; }
+   body {
+       min-height: 100vh;
+       background-color: #000;
+       position: relative;
+       overflow: hidden;
+   }
+   figure{
+    position: absolute;
+    min-width: 100%;
+    display: block;
+    bottom: 50%; right: 50%;
+    transform: translateX(50%) translateY(50%);
+   }
+
+   #a{
+       right: 0%;
+   }
+   #b{
+       right: 10%;
+   }
+   #c{
+       right: 20%;
+   }
+   #d{
+       right: 30%;
+   }
+   #e{
+       right: 40%;
+   }
+
+   @keyframes myMove {
+
+       0% {
+        transform: rotateY(0deg);
+        width: 100%;
+
+        box-shadow: 
+
+        100px -35px 0px #ADE9FF, 
+        200px -75px 0px #82D6FF, 
+        300px -125px 0px #69B7FF,
+        400px -175px 0px #4291FF, 
+        500px -225px 0px #2B67FF, 
+        600px -275px 0px #1745FF;
+
+           
+        }
+        50% {
+            width: 71%;
+
+            box-shadow: 
+               0 0 0px #ADE9FF, 
+               0 0 0px #82D6FF, 
+               0 0 0px #69B7FF,
+               0 0 0px #4291FF, 
+               0 0 0px #2B67FF, 
+               0 0 0px #1745FF;
+        }
+
+        100% {
+            width: 71%;
+            transform: rotateY(720deg);
+
+            box-shadow: 
+                100px -35px 0px #ADE9FF, 
+                200px -75px 0px #82D6FF, 
+                300px -125px 0px #69B7FF,
+                400px -175px 0px #4291FF, 
+                500px -225px 0px #2B67FF, 
+                600px -275px 0px #1745FF;
+        }
+
+   }
+
+   .stuff{
+       background-color: transparent;
+       animation: myMove 40s infinite;
+       width: 0px;
+       height: 900px;
+       border-radius: 50%;
+       position: absolute;
+       top: -500px;
+       transition: 0.3s;
+   }
+
+
+  </style>
+  </head>
+  <body>
+
+        <figure>
+            <div class="stuff draggable" id="a"></div>
+            <div class="stuff draggable" id="b"></div>
+            <div class="stuff draggable" id="c"></div>
+            <div class="stuff draggable" id="d"></div>
+            <div class="stuff draggable" id="e"></div>
+        </figure>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script>
+      $(document).ready(function(){
+        console.log('Meep');
+        $( ".draggable" ).draggable();
+      });
+  </script>
+  </body>
+</html>
